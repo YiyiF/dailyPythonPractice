@@ -3,13 +3,12 @@ import random, string, pymysql
 
 sequence = string.ascii_uppercase + string.digits
 
-discountCodeList = []
-while len(discountCodeList) < 200:
+discountCodeSet = set()
+while len(discountCodeSet) < 200:
     codeCharacter = random.sample(sequence, 6)
     discountCode = ''.join(codeCharacter)
-    if discountCode not in discountCodeList:
-        discountCodeList.append(discountCode)
-print(discountCodeList)
+    discountCodeSet.add(discountCode)
+print(discountCodeSet)
 
 connection = pymysql.connect(host='localhost',
                              port=3306,
