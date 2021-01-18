@@ -18,6 +18,6 @@ while len(discountCodeSet) < 200:
     discountCodeSet.add(discountCode)
     pipe.sadd('discountCode', discountCode)
 pipe.execute()
-print('Finish in {} secs.' .format(time.time() - beginTime))
+print('Finish in {} secs.' .format(time.time() - beginTime))  # Finish in 0.006020069122314453 secs.
 # dbValue = redis.smembers('discountCode')
 # print(discountCodeSet == dbValue)

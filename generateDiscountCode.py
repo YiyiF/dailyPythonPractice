@@ -1,5 +1,7 @@
 #! /usr/bin/env python3
-import random, string, pymysql
+import random, string, pymysql, time
+
+beginTime = time.time()
 
 sequence = string.ascii_uppercase + string.digits
 
@@ -8,7 +10,7 @@ while len(discountCodeSet) < 200:
     codeCharacter = random.sample(sequence, 6)
     discountCode = ''.join(codeCharacter)
     discountCodeSet.add(discountCode)
-print(discountCodeSet)
+# print(discountCodeSet)
 
 connection = pymysql.connect(host='localhost',
                              port=3306,
@@ -37,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `discountCode` (
 # effect_row = cursor.execute('INSERT INTO `discountCode` (`code`) VALUES (%s)', discountCodeList)
 
 sql = 'INSERT INTO `discountCode` (`code`) VALUES (%s)'
-cursor.executemany(sql, discountCodeList)
+cursor.executemany(sql, discountCodeSet)
 connection.commit()
-
+print('Finish in {} secs.' .format(time.time() - beginTime))  # Finish in 0.020093917846679688 secs.
 connection.close()
