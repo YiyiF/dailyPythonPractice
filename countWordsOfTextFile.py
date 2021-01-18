@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-import sys, string, time
+import sys, string, time, os
 
 
 def countWords(path):
@@ -25,7 +25,7 @@ def countWords(path):
         line = file.readline()
 
     print('{} has {} words overall.'.format(path, words_count))
-    print('Count {} kb sized file finish in {:.4f} secs.'.format(file.__sizeof__(), time.time() - begin))
+    print('Count {} bytes sized file finish in {:.4f} secs.'.format(os.path.getsize(path), time.time() - begin))
 
 
 if __name__ == '__main__':
