@@ -1,0 +1,5 @@
+=== **** ===
+Hello, world!
+Peter's favourite number is 4.
+3-day is short for three-day or three days.
+=== **** ===
