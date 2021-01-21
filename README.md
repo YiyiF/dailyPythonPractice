@@ -6,3 +6,4 @@ Solution of [Python 练习册，每天一个小程序](https://github.com/Yixiao
 * 0001 & 0002 generateDiscountCode.py
 * 0003 storeDataWithRedis.py
 * 0004 countWordsOfTextFile.py
+* 0005 changeImageResolution.py
