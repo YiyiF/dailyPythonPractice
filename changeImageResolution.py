@@ -18,9 +18,9 @@ def changeImageResolution(image):
     width, height = curImage.size
     width_ratio = width / iPhone5Resolution['width']
     height_ratio = height / iPhone5Resolution['height']
-    if width_ratio < 1 and height_ratio < 1:
+    if width_ratio <= 1 and height_ratio <= 1:
         img = curImage.copy()
-    elif width_ratio > height_ratio:
+    elif width_ratio >= height_ratio:
         img = curImage.copy().resize((iPhone5Resolution['width'], int(height / width_ratio)))
     elif width_ratio < height_ratio:
         img = curImage.copy().resize((int(width / height_ratio), iPhone5Resolution['height']))
