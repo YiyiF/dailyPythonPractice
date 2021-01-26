@@ -12,7 +12,7 @@ def countWords(path):
 
     file = open(path)
     line = file.readline()
-    words_Punctuation = string.punctuation.replace('\'', '').replace('-', '') + string.whitespace
+    words_Punctuation = string.punctuation.replace('\'', '').replace('-', '').replace('\'', '') + string.whitespace
     i = 0
     while line:
         while i < len(line):
