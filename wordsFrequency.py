@@ -12,8 +12,8 @@ def remove_symbols(sentence):
     return sentence
 
 
-def wordsFrequency(filename):
-    file = open(filename)
+def wordsFrequency(tmp_filename):
+    file = open(tmp_filename)
     content = file.read()
     content = remove_symbols(content)
     words = content.split()
@@ -39,4 +39,5 @@ if __name__ == '__main__':
         for filename in filenames:
             if not filename.lower().endswith('.txt'):
                 continue
-            print('The most important word of {}: {}'.format(filename, wordsFrequency(dirpath + os.path.sep + filename)))
+            print('The most important word of {}: {}'.
+                  format(filename, wordsFrequency(dirpath + os.path.sep + filename)))
